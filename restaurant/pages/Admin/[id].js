@@ -8,7 +8,7 @@ export default  function Admin() {
     const [OrdersData, SetOrdersData]=useState([])
     const [ChangeStatusText, SetChangeStatusText] = useState('')
     const DelOrder = async(_id)=>{
-        await fetch(`http://localhost:3000/api/DelOrder?id=${_id}`).then((response_) => {
+        await fetch(`https://online-resturant-program.vercel.app/api/DelOrder?id=${_id}`).then((response_) => {
             response_.json().then((data) => {
 
                 AdminCheck();
@@ -18,7 +18,7 @@ export default  function Admin() {
     }
 
     const ModStatus = async (_id) => {
-        await fetch(`http://localhost:3000/api/ModStatus?id=${_id}&&newstate=${ChangeStatusText}`).then((response_) => {
+        await fetch(`https://online-resturant-program.vercel.app/api/ModStatus?id=${_id}&&newstate=${ChangeStatusText}`).then((response_) => {
             response_.json().then((data) => {
 
                 AdminCheck();
@@ -29,11 +29,11 @@ export default  function Admin() {
 
 
     const AdminCheck = async () => {
-        await fetch(`http://localhost:3000/api/CheckExistanceOfId?id=${id}`).then((response) => {
+        await fetch(`https://online-resturant-program.vercel.app/api/CheckExistanceOfId?id=${id}`).then((response) => {
             response.json().then((data) => {
              
                 if (data['resp'].length >= 1) {
-                    fetch(`http://localhost:3000/api/GetAllTheOrders`).then((response_) => {
+                    fetch(`https://online-resturant-program.vercel.app/api/GetAllTheOrders`).then((response_) => {
                         response_.json().then((data) => {
                             
 
