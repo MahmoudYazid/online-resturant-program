@@ -1,0 +1,18 @@
+.FoodListImg{
+    min-width: 10rem;
+    height: 5rem;
+}
+.FoodlistClass::-webkit-scrollbar{
+ width: 5px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
+
+
+}
+.FoodlistClass::-webkit-scrollbar-thumb {
+  background: #000;
+}
+.XSympol{
+    width: 2rem;
+    height: 2rem;
+}
