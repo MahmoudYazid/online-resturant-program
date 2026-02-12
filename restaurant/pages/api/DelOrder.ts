@@ -8,7 +8,7 @@ export default function handler(
   res: NextApiResponse
 ) {
     const id_ = req.query.id
-    mongoose.connect('mongodb+srv://abuelyazidsoftware:mnimai21yo@clone.7pm38gz.mongodb.net/restaurants?retryWrites=true&w=majority')
+    mongoose.connect('mongodb+srv://abuelyazidsoftware:mahmoud2020@cluster0.4pb3ivp.mongodb.net/restaurants?appName=Cluster0')
   .then(()=>{
         OrderModel.findOneAndRemove({
             _id:id_

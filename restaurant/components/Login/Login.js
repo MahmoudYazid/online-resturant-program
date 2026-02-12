@@ -9,7 +9,7 @@ export default function Login() {
     const router = useRouter()
 
     const CheckAuth = async () => {
-        await fetch(`https://online-resturant-program.vercel.app/api/CheckAuth?name=${InputName}&password=${InputPassword}`).then((response) => {
+        await fetch(`/api/CheckAuth?name=${InputName}&password=${InputPassword}`).then((response) => {
             response.json().then((data) => {
 
                 if (data['resp'].length > 0) {
