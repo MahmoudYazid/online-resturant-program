@@ -26,7 +26,7 @@ export default function OrderComponant() {
     }
 
     const SendOrder=async ()=>{
-        await fetch(`/api/PostOrder?name=${NameState}&address=${AddressState}&tel=${PhoneState}&order=${OrderState}&note=${NoteState}&email=${EmailState}`).then((response)=>{
+        await fetch(`https://online-resturant-program.vercel.app/api/PostOrder?name=${NameState}&address=${AddressState}&tel=${PhoneState}&order=${OrderState}&note=${NoteState}&email=${EmailState}`).then((response)=>{
             SetOrderSendMsg('visible')
         })
     }
