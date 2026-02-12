@@ -1,27 +1,29 @@
 import { MongoClient } from 'mongodb'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default function handler(
+const uri = 'mongodb+srv://abuelyazidsoftware:mahmoud2020@cluster0.4pb3ivp.mongodb.net/restaurants?appName=Cluster0'
+
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const tel_ = req.query.tel
-
-  const uri = 'mongodb+srv://abuelyazidsoftware:mahmoud2020@cluster0.4pb3ivp.mongodb.net/restaurants?appName=Cluster0'
   const client = new MongoClient(uri)
 
-  client.connect().then(() => {
-
+  try {
+    await client.connect()
     const db = client.db('restaurants')
 
-    db.collection('orders').find({
+    const response = await db.collection('orders').find({
+      // You're getting tel_ but not using it - was this intentional?
+      // If you want to filter by tel: tel: tel_
+    }).toArray()
 
-    }).toArray().then((response) => {
+    res.status(200).json({ resp: response })
+    await client.close()
 
-      res.status(200).json({ resp: response })
-      client.close()
-
-    })
-
-  })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ resp: [], error: 'Database error' })
+  }
 }
