@@ -6,7 +6,7 @@ export default function GetOrderState() {
     const [GetOrdertext, SetGetOrdertext] = useState('')
     
     const CheckStetus = async () => {
-        await fetch(`https://online-resturant-program-f8ty7h4yo-mahmoudyazid.vercel.app/api/GetOrderStatus?tel=${PhoneState}`).then((response) => {
+        await fetch(`/api/GetOrderStatus?tel=${PhoneState}`).then((response) => {
             response.json().then((data) => {
                 
                 if (data['resp'].length > 0){
