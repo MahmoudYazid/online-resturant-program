@@ -1,4 +1,4 @@
-import React, { useRef,useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import '../../../Api'
 import { ApiData } from '../../../Api'
 
@@ -6,6 +6,17 @@ export default function Foodlist() {
   const FoodListController = useRef();
   const [FoodListvisibilityState, SetvisibilityState] = useState('invisible')
   const [DataOnProduct, SetDataOnProduct] = useState('')
+  const [MealData, setMealData] = useState([])
+
+  // Fetch data from TheMealDB API
+  useEffect(() => {
+    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+      .then(response => response.json())
+      .then(data => {
+        setMealData(data.categories)
+      })
+      .catch(error => console.error('Error:', error))
+  }, [])
 
   return (
     <>
@@ -19,20 +30,30 @@ export default function Foodlist() {
 
         </div>
       {
-ApiData.map((data)=>(
-  <div onClick={()=>{
-    SetDataOnProduct(`${data['description']}`)
-    SetvisibilityState('visible')
-   
-
-  }} className=' hover:scale-110 hover:cursor-pointer drop-shadow-lg  bg-gay-100 m-5  min-w-[300px] min-h-[300px]    flex flex-col  justify-center text-center text-black item-center   '>
-    <img src={`${data['img']}`} className='FoodListImg w-full flex-1 '></img>
-    <p className='font-black italic text-1xl'>
-      {data['name']}
-    </p>
-
-  </div>
-))
+        MealData.map((data)=>(
+          <div 
+            key={data.idCategory}
+            onClick={()=>{
+              SetDataOnProduct(data.strCategoryDescription)
+              SetvisibilityState('visible')
+            }} 
+            className='hover:scale-110 hover:cursor-pointer drop-shadow-lg bg-gay-100 m-5 min-w-[300px] min-h-[300px] flex flex-col justify-center text-center text-black item-center'>
+            
+            {/* Only show image if URL exists and is valid */}
+            {data.strCategoryThumb && (
+              <img 
+                src={data.strCategoryThumb} 
+                className='FoodListImg w-full flex-1'
+                alt={data.strCategory}
+                onError={(e) => { e.currentTarget.style.display = 'none' }}
+              />
+            )}
+            
+            <p className='font-black italic text-1xl'>
+              {data.strCategory}
+            </p>
+          </div>
+        ))
       }
     
 

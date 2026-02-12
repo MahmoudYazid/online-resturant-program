@@ -1,60 +1,6 @@
 export const ApiData = [
-    {
-        "id": 1,
-        "name": "Margherita",
-        "veg": true,
-        "price": 3,
-        "description": "Cheese",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/margherita.90f9451fd66871fb6f9cf7d506053f18.1.jpg?width=550",
-        "sizeandcrust": [
-            {
-                "mediumPan": [
-                    {
-                        "price": 3
-                    }
-                ],
-                "mediumstuffedcrustcheesemax": [
-                    {
-                        "price": 5
-                    }
-                ],
-                "mediumstuffedcrustvegkebab": [
-                    {
-                        "price": 8
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Tandoori Paneer",
-        "veg": true,
-        "price": 7,
-        "description": "Spiced paneeer, Onion,Green Capsicum & Red Paprika in Tandoori Sauce",
-        "quantity": 1,
-        "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/tandoori-paneer.4ef45717e972cf45b43c010e3cde5a22.1.jpg?width=550",
-        "sizeandcrust": [
-            {
-                "mediumPan": [
-                    {
-                        "price": 7
-                    }
-                ],
-                "mediumstuffedcrustcheesemax": [
-                    {
-                        "price": 9
-                    }
-                ],
-                "medium stuffed crust-veg kebab": [
-                    {
-                        "price": 12
-                    }
-                ]
-            }
-        ]
-    },
+   
+   
     {
         "id": 3,
         "name": "Veggie Supreme",
