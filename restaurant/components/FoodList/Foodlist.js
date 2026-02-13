@@ -60,7 +60,7 @@ export default function Foodlist() {
     
       
     </div>
-      <div className={`z-10 min-h-screen	 w-80 bg-white		 flex flex-col  fixed	 visible ${FoodListvisibilityState}   `} id='FoodListSideNavbar' ref={FoodListController} >
+      <div className={`text-black z-10 min-h-screen	 w-80 bg-white		 flex flex-col  fixed	 visible ${FoodListvisibilityState}   `} id='FoodListSideNavbar' ref={FoodListController} >
         <img src='/kitchen.svg' className='imgConfig'></img>
         
         <div className=' justify-items-center  justify-center content-center item-center  flex flex-col flex-1 bg-white text-center  '>
