@@ -22,7 +22,7 @@ export default function GetOrderState() {
         })
     }
   return (
-      <div id='OrderStatus' className={` w-full  flex lg:flex-col flex-1  flex-col mt-20  bg-black`}>
+      <div id='OrderStatus' className={` text-black  w-full  flex lg:flex-col flex-1  flex-col mt-20  bg-black`}>
           <div className=' bg-black   w-full  flex-1 flex flex-row  justify-center text-center  '>
               <div className='w-50 bg-black w-1/3 	 text-black rounded-[5px]'>
                   <p className=' italic text-3xl mt-2 text-white FontFamilyText'>

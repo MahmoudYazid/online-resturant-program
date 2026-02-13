@@ -31,7 +31,7 @@ export default function OrderComponant() {
         })
     }
   return (
-      <div id="MakeOrder" className='w-100 flex flex-row align-center text-center  justify-center content-center'>
+      <div id="MakeOrder" className='text-black w-100 flex flex-row align-center text-center  justify-center content-center'>
           <div className={` w-[80%]    flex  flex-col content-center	items-center justify-items-center mt-20 rounded-tr-[10px] `}>
           <p className='font-black text-black italic text-3xl '>
               Make Your Order Now

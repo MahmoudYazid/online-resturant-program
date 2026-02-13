@@ -64,7 +64,7 @@ export default  function Admin() {
 
     },[])
   return (
-      <div className="flex justify-start items-center h-screen overflow-x-scroll scroll-smooth bg-white ">
+      <div className="text-black  flex justify-start items-center h-screen overflow-x-scroll scroll-smooth bg-white ">
 
         
           <div onClick={()=>{

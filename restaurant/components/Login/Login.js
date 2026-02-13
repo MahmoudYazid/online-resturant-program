@@ -27,7 +27,7 @@ export default function Login() {
         })
     }
   return (
-      <div id='LoginForm' className={` w-full  flex lg:flex-col flex-1  flex-col mt-20  bg-white`}>
+      <div id='LoginForm' className={` text-black  w-full  flex lg:flex-col flex-1  flex-col mt-20  bg-white`}>
           <div className=' bg-white   w-full  flex-1 flex flex-row  justify-center text-center  '>
               <div className='w-50 bg-white w-1/3 	 text-black rounded-[5px]'>
                   <p className=' italic text-3xl mt-2 text-black FontFamilyText'>
